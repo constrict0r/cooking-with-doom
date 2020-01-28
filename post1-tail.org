@@ -1,0 +1,19 @@
+#+title: Tail
+#+author: constrict0r
+#+date: <2020-01-28 mar>
+
+* Tail
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+- To tail 1000 lines of a file:
+
+  #+BEGIN_SRC bash
+  tail -n 1000 /var/log/syslog
+  #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
