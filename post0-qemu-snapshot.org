@@ -4,7 +4,7 @@
 
 * Qemu - Handle Snapshot
 
-  #+CAPTION: Cooking with Doom
+  #+CAPTION: Doom
   #+NAME:   fig:cooking-with-doom
   [[./img/cooking-with-doom.png]]
 
