@@ -63,5 +63,5 @@ follow the next steps:
   #+END_SRC
 
 #+CAPTION: Enjoy
-#+NAME:   fig:enjoy
-[[./img/enjoy.png]]
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
