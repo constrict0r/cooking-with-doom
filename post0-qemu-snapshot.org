@@ -4,9 +4,9 @@
 
 * Qemu - Handle Snapshot
 
-  #+CAPTION: Doom
-  #+NAME:   fig:cooking-with-doom
-  [[./img/cooking-with-doom.png]]
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
 
 To take a snapshot to a virtual machine created via Virt Manager (or similar),
 follow the next steps:
@@ -61,3 +61,7 @@ follow the next steps:
   #+BEGIN_SRC bash
   virsh snapshot-delete debian initial
   #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:enjoy
+[[./img/enjoy.png]]
