@@ -56,8 +56,8 @@ follow the next steps:
   virsh snapshot-revert debian initial
   #+END_SRC
 
- - You can delete a snapshot using the command:
+- You can delete a snapshot using the command:
 
-   #+BEGIN_SRC bash
-   virsh snapshot-delete debian initial
-   #+END_SRC
+  #+BEGIN_SRC bash
+  virsh snapshot-delete debian initial
+  #+END_SRC
