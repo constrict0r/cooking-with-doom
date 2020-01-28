@@ -2,7 +2,7 @@
 #+author: constrict0r
 #+date: <2020-01-28 jue>
 
-[[https://constrict0r.gitlab.io/cooking-with-doom/][Technical Recipes for the Everyday Villain]].
+[[https://constrict0r.gitlab.io/cooking-with-doom/][Technical Recipes for the Everyday Villain]]
 
 [[./img/cooking-with-doom.png]]
 
