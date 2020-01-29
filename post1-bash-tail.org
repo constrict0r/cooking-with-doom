@@ -1,8 +1,8 @@
-#+title: Tail
+#+title: Bash - Tail
 #+author: constrict0r
 #+date: <2020-01-28 mar>
 
-* Tail
+* Bash - Tail
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
