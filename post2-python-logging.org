@@ -1,0 +1,21 @@
+#+title: Python - Logging
+#+author: constrict0r
+#+date: <2020-01-29 mié>
+
+* Python - Logging
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+- To add a quick logging message:
+
+  #+BEGIN_SRC bash
+  import logging
+  logging.warning('Watch out!')  # will print a message to the console
+  logging.info('I told you so')  # will not print anything
+  #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
