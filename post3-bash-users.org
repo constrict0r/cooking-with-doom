@@ -11,7 +11,7 @@
 - To add an existent user to a system group:
 
   #+BEGIN_SRC bash
-  usermod -a -G groupName user
+  sudo usermod -a -G groupName user
   #+END_SRC
 
 #+CAPTION: Enjoy
