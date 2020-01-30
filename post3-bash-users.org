@@ -1,0 +1,19 @@
+#+title: Bash - Users
+#+author: constrict0r
+#+date: <2020-01-30 jue>
+
+* Bash - Users
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+- To add an existent user to a system group:
+
+  #+BEGIN_SRC bash
+  usermod -a -G groupName user
+  #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
