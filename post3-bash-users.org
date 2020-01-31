@@ -11,7 +11,14 @@
 - To add an existent user to a system group:
 
   #+BEGIN_SRC bash
-  sudo usermod -a -G groupName user
+  # Add the group.
+  sudo addgroup libvirtd
+
+  # Add current user to group with adduser.
+  sudo adduser $(whoami) libvirtd
+
+  #Add current user to group with usermod.
+  sudo usermod -a -G groupName $(whoami)
   #+END_SRC
 
 #+CAPTION: Enjoy
