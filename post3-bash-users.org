@@ -17,7 +17,7 @@
   # Add current user to group with adduser.
   sudo adduser $(whoami) libvirtd
 
-  #Add current user to group with usermod.
+  # Add current user to group with usermod.
   sudo usermod -a -G groupName $(whoami)
   #+END_SRC
 
