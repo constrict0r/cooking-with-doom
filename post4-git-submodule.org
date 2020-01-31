@@ -1,0 +1,28 @@
+#+title: Git - Submodule
+#+author: constrict0r
+#+date: <2020-01-31 vie>
+
+* Git - Submodule
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+- To handle git submodules:
+
+  #+BEGIN_SRC bash
+  # Add.
+  git submodule add -b branch_name https://gitlab.com/constrict0r/submodulename optional_directory_rename
+
+  # Get.
+  git submodule update --init --recursive
+  git submodule update --recursive
+
+  # Remove.
+  git rm submodulename
+  rm -rf .git/modules/submodulename
+  #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
