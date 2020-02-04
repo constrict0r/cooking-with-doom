@@ -41,7 +41,7 @@ follow the next steps:
 - Take the snapshot (using here 'debian' as the VM name):
 
   #+BEGIN_SRC bash
-  virsh snapshot-create debian inicial.xml
+  virsh snapshot-create debian initial.xml
   #+END_SRC
 
 - You can list the snapshots that a Virtual Machine has by using the command:
