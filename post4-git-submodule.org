@@ -23,6 +23,20 @@
   rm -rf .git/modules/submodulename
   #+END_SRC
 
+- To update the [[https://gitlab.com/constrict0r/parts][parts]] submodule (i.e. on the [[https://github.com/constrict0r/autodebian][Autodebian project]]):
+
+  #+BEGIN_SRC bash
+  # Enter the repository folder.
+  cd ~/repository
+
+  # Run the next command.
+  git checkout master && cd docs/source/parts/ && git checkout master \
+      && git pull origin master && cd ../../.. && rm README.rst \
+      && ./docthis.sh && mv README-single.rst README.rst && git add . \
+      && git commit -m "Updates parts submodule" && git push \
+      && basename $(pwd) && cd .. && ls
+  #+END_SRC
+
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
 [[./img/ice-cream.png]]
