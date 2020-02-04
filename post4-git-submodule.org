@@ -37,6 +37,15 @@
       && basename $(pwd) && cd .. && ls
   #+END_SRC
 
+- To update the [[https://gitlab.com/constrict0r/docthis][docthis]] script (i.e. on the Autodebian project):
+
+  #+BEGIN_SRC bash
+  git checkout master && git pull origin master && rm README.rst \
+      && ./docthis.sh && mv README-single.rst README.rst && git add . \
+      && git commit -m "Updates docthis scripts" && git push \
+      && basename $(pwd) && cd .. && ls
+  #+END_SRC
+
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
 [[./img/ice-cream.png]]
