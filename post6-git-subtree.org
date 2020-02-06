@@ -1,0 +1,26 @@
+#+title: Git - Submodule
+#+author: constrict0r
+#+date: <2020-01-31 vie>
+
+* Git - Subtree
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+- To handle git subtrees:
+
+  #+BEGIN_SRC bash
+  # Add.
+  git subtree add --prefix org/org-cv git@gitlab.com:Titan-C/org-cv.git master --squash
+
+  # Update.
+  git subtree pull --prefix org/org-cv git@github.com:Titan-C/org-cv.git master --squash
+
+  # Remove.
+  git filter-branch --index-filter 'git rm --cached --ignore-unmatch -rf org/org-cv' --prune-empty -f HEAD
+  #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
