@@ -1,6 +1,6 @@
 #+title: Emacs - Org-CV
 #+author: constrict0r
-#+date: <2020-01-31 vie>
+#+date: <2020-02-06 jue>
 
 * Emacs - Org-CV
 
