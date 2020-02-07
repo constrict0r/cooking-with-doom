@@ -8,8 +8,14 @@
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-To generate a curriculum vitae using [[https://titan-c.gitlab.io/org-cv][org-cv]] add the following configuration
-to your *init.el* file:
+To generate a curriculum vitae using [[https://titan-c.gitlab.io/org-cv][org-cv]] add the following configuration,
+install the packages *texlive-latex-base* and *texlive-latex-extra*:
+
+  #+BEGIN_SRC bash
+  sudo apt install -y texlive-latex-base texlive-latex-extra
+  #+END_SRC
+
+Add the following configuration to your *init.el* file:
 
   #+BEGIN_SRC bash
   ;; Install required packages if not installed.
