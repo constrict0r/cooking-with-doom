@@ -88,17 +88,17 @@ Open the file *~/org/org-cv/curriculum.org* with Emacs.
 On Emacs press the keybinding **C-:** to execute the **Eval** command, type
 the following command and press *RET*:
 
-```
-(org-export-to-file 'moderncv "curriculum.tex")
-```
+  #+BEGIN_SRC lisp
+  (org-export-to-file 'moderncv "curriculum.tex")
+  #+END_SRC
 
 The previous command will generate the file *~/org/org-cv/curriculum.tex*,
 to compile that file and generate the final *~/org/org-cv/curriculum.pdf* file,
 press **C-:** again, type the following command and press *RET*:
 
-```
-(org-latex-compile "curriculum.tex")
-```
+  #+BEGIN_SRC lisp
+  (org-latex-compile "curriculum.tex")
+  #+END_SRC
 
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
