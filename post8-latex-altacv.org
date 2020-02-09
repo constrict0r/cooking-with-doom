@@ -1,0 +1,40 @@
+#+title: Latex - AltaCV
+#+author: constrict0r
+#+date: <2020-02-08 sáb>
+
+* Latex - AltaCV
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+To generate a curriculum vitae using [[https://github.com/liantze/AltaCV][AltaCV]], install the package
+*texlive-bibtex-extra*:
+
+  #+BEGIN_SRC bash
+  sudo apt install -y texlive-bibtex-extra
+  #+END_SRC
+
+Clone the *AltaCV* repository:
+
+  #+BEGIN_SRC 
+  git clone https://github.com/liantze/AltaCV.git ~/repos/AltaCV
+  #+END_SRC
+
+Create the file *~/repos/AltaCV/curriculum.org* with a content similar
+to [[https://github.com/liantze/AltaCV/blob/master/mmayer.tex][this example]].
+
+Open the file *~/repos/AltaCV/curriculum.org* with Emacs.
+
+On Emacs press the keybinding **C-:** to execute the **Eval** command, type
+the following command and press *RET*:
+
+  #+BEGIN_SRC lisp
+  (org-latex-compile "curriculum.tex")
+  #+END_SRC
+
+A *curriculum.pdf* file is generated.
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]

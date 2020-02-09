@@ -17,7 +17,7 @@ To generate a curriculum vitae using [[https://titan-c.gitlab.io/org-cv][org-cv]
 
 Add the following configuration to your *init.el* file:
 
-  #+BEGIN_SRC bash
+  #+BEGIN_SRC lisp
   ;; Install required packages if not installed.
   (mapc #'(lambda (package)
     (unless (package-installed-p package)
