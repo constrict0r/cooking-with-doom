@@ -21,10 +21,10 @@ Clone the *AltaCV* repository:
   git clone https://github.com/liantze/AltaCV.git ~/repos/AltaCV
   #+END_SRC
 
-Create the file *~/repos/AltaCV/curriculum.org* with a content similar
+Create the file *~/repos/AltaCV/curriculum.tex* with a content similar
 to [[https://github.com/liantze/AltaCV/blob/master/mmayer.tex][this example]].
 
-Open the file *~/repos/AltaCV/curriculum.org* with Emacs.
+Open the file *~/repos/AltaCV/curriculum.tex* with Emacs.
 
 On Emacs press the keybinding **C-:** to execute the **Eval** command, type
 the following command and press *RET*:
