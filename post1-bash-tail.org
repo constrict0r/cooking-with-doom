@@ -1,14 +1,12 @@
-#+title: Bash - Tail
+#+title: Bash - Tail Command Tricks
 #+author: constrict0r
 #+date: <2020-01-28 mar>
-
-* Bash - Tail
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-- To tail 1000 lines of a file:
+* To tail 1000 lines of a file:
 
   #+BEGIN_SRC bash
   tail -n 1000 /var/log/syslog
