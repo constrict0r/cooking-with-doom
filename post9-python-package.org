@@ -1,0 +1,240 @@
+#+title: Python - Package
+#+author: constrict0r
+#+date: <2020-02-09 dom>
+
+* Python - Package
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+To create a Python Package Doom recommends using:
+
+- Click.
+- Python Poetry
+- Tox.
+
+Here we are going to build the a Python package named **muscaria**
+whose only functionality is to print a tasty mushroom.
+
+In order to build the package, follow the next steps:
+
+- Install Python Poetry if not installed:
+  
+  #+BEGIN_SRC bash
+  curl -sSL https://is.gd/yWBRIs
+  #+END_SRC
+
+- Use Poetry to create a new package layout, here we use the example
+  *amanita* package:
+
+  #+BEGIN_SRC bash
+  poetry new amanita
+  #+END_SRC
+
+- Enter the newly created folder:
+
+  #+BEGIN_SRC bash
+  cd amanita
+  #+END_SRC
+
+- Edit the content of the file *pyproject.toml* to be similar to the
+  following:
+
+  #+BEGIN_SRC bash
+[tool.poetry]
+name = "amanita"
+version = "0.1.0"
+description = "Tasty Mushrooms"
+authors = ["constrict0r <constrict0r@protonmail.com>"]
+license="MIT"
+
+readme = "README.rst"
+
+homepage="https://gitlab.com/constrict0r/amanita"
+repository="https://gitlab.com/constrict0r/amanita"
+documentation="https://amanita.readthedocs.io"
+
+keywords = ["ansible", "auto", "devops", "platformio", "projects"]
+
+classifiers = [
+    'Topic :: Software Development :: Build Tools',
+    'License :: OSI Approved :: MIT License',
+]
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.6"
+tox = "^3.14.3"
+
+[tool.poetry.dependencies]
+click = "^7.0"
+python = "^3.5"
+
+[tool.poetry.scripts]
+amanita = "amanita.cli:main"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.tox]
+legacy_tox_ini= """
+[tox]
+skipsdist = True
+envlist = py{37}
+
+[testenv]
+deps =
+  poetry
+  pytest
+commands =
+  poetry install
+  py.test tests
+"""
+
+  #+END_SRC
+
+- Now, we will create the following folder structure, go to next step.
+
+  #+BEGIN_SRC bash
+  amanita/
+  ├── amanita.py
+  ├── cli.py
+  ├── __init__.py
+  ├── __main__.py
+  └── project.py
+  #+END_SRC
+
+- Replace the content of the file *~/amanita/amanita/__init__.py*
+  with something similar to the following:
+
+  #+BEGIN_SRC python
+# -*- coding: utf-8 -*-
+
+"""amanita - Delivers Tasty Mushrooms."""
+
+__title__ = 'amanita
+__version__ = '0.1.0'
+__author__ = 'constrict0r <constrict0r@protonmail.com>'
+__all__ = []
+  #+END_SRC
+
+- Add the file *~/amanita/amanita/__main__.py* with the following content:
+
+  #+BEGIN_SRC python
+  # -*- coding: utf-8 -*-
+
+  """Main amanita."""
+
+  import sys
+
+  from .cli import main
+
+
+  if __name__ == "__main__":
+      sys.exit(main())
+  #+END_SRC
+
+- Add the file *~/amanita/amanita/amanita.py* with the following content:
+
+  #+BEGIN_SRC python
+# -*- coding: utf-8 -*-
+
+"""Of the mushroom, said the CaterpillarDelivers Tasty Amanitas."""
+
+
+class Amanita:
+    """Delivers Tasty Amanita Mushrooms."""
+
+    @staticmethod
+    def muscaria(info):
+        """Tasty Amanita Muscaria.
+
+        Enjoy!!
+
+        Returns:
+        string: A Tasty Amanita Muscaria.
+
+        """
+        muscaria = """\
+          ___.....___
+      .'"    ()      o"`
+    .                    .
+   .                      .
+  .              O         .
+ .  ()   o___...___ O       .
+. _.--'"'            '"'--._ .
+:"                          ";
+ `-.__     :     :      __.-'
+       "'"-:      :-"'"
+            J       L
+            :        :
+            J        L
+           :         :
+           :         :
+      '''|| `._____.'''|||
+        """
+
+        if info:
+            muscaria = muscaria + '\nFly Agaric\nHallucinogen'
+
+        return muscaria
+  #+END_SRC
+
+- Add the file *~/amanita/amanita/cli.py* with the following content:
+
+  #+BEGIN_SRC python
+# -*- coding: utf-8 -*-
+
+"""Main amanita CLI."""
+
+import os
+import sys
+
+import click
+
+from amanita import __version__
+from amanita import amanita
+
+
+def version_msg():
+    """Return the amanita version, location and Python powering it."""
+    python_version = sys.version[:3]
+    location = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    message = u'amanita %(version)s from {} (Python {})'
+    return message.format(location, python_version)
+
+
+@click.command(context_settings=dict(help_option_names=[u'-h', u'--help']))
+@click.version_option(__version__, u'-V', u'--version', message=version_msg())
+@click.argument('path', required=True)
+@click.option(
+     u'-i', u'--info', is_flag=True, default=False,
+     help=u'Show information about the Mushroom.')
+def main(path, info):
+    """Delivers A Tasty Amanita
+
+    Package main entry point.
+    """
+
+    click.echo('A Tasty ' + click.style('Amanita ', fg='blue') +
+               click.style('Muscaria', fg='red'))
+
+    click.echo(click.style(amanita.Amanita.muscaria(info), fg='red'))
+  #+END_SRC
+
+- Install the dependencies using Poetry:
+
+  #+BEGIN_SRC bash
+  poetry install
+  #+END_SRC  
+
+- Run the package with Poetry:
+
+  #+BEGIN_SRC bash
+  poetry run amanita -h
+  #+END_SRC
+  
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
