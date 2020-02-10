@@ -10,9 +10,9 @@
 
 To create a Python Package Doom recommends using:
 
-- Click.
-- Python Poetry
-- Tox.
+- [[https://click.palletsprojects.com][Click]].
+- [[https://python-poetry.org][Python Poetry]].
+- [[https://tox.readthedocs.io][Tox]].
 
 Here we are going to build the a Python package named **amanita**
 whose only functionality is to print a tasty mushroom.
