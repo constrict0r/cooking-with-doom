@@ -14,7 +14,7 @@ To create a Python Package Doom recommends using:
 - Python Poetry
 - Tox.
 
-Here we are going to build the a Python package named **muscaria**
+Here we are going to build the a Python package named **amanita**
 whose only functionality is to print a tasty mushroom.
 
 In order to build the package, follow the next steps:
