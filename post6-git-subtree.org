@@ -1,14 +1,12 @@
-#+title: Git - Subtree
+#+title: [Git] Subtree
 #+author: constrict0r
 #+date: <2020-01-31 vie>
-
-* Git - Subtree
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-- To handle git subtrees:
+* To handle git subtrees:
 
   #+BEGIN_SRC bash
   # Add.

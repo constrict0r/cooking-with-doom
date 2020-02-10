@@ -1,4 +1,4 @@
-#+title: QEMU: Handle Snapshot
+#+title: [QEMU] Handle Snapshot
 #+author: constrict0r
 #+date: <2020-01-28 mar>
 
@@ -6,8 +6,7 @@
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-* To take a snapshot to a virtual machine created via Virt Manager (or similar),
-  follow the next steps:
+* To take a snapshot to a virtual machine created via Virt Manager (or similar):
 
   - Become the root user:
 

@@ -1,4 +1,4 @@
-#+title: Bash: Tail Command Tricks
+#+title: [Bash] Tail Command
 #+author: constrict0r
 #+date: <2020-01-28 mar>
 

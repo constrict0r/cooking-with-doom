@@ -1,14 +1,12 @@
-#+title: Python - Logging
+#+title: [Python] Logging
 #+author: constrict0r
 #+date: <2020-01-29 mié>
-
-* Python - Logging
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-- To add a quick logging message:
+* To add a quick logging message:
 
   #+BEGIN_SRC bash
   import logging

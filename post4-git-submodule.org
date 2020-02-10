@@ -1,14 +1,12 @@
-#+title: Git - Submodule
+#+title: [Git] Submodule
 #+author: constrict0r
 #+date: <2020-01-31 vie>
-
-* Git - Submodule
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-- To handle git submodules:
+* To handle git submodules:
 
   #+BEGIN_SRC bash
   # Add.
@@ -23,7 +21,7 @@
   rm -rf .git/modules/submodulename
   #+END_SRC
 
-- To update the [[https://gitlab.com/constrict0r/parts][parts]] submodule (i.e. on the [[https://github.com/constrict0r/autodebian][Autodebian project]]):
+* To update the [[https://gitlab.com/constrict0r/parts][parts]] submodule (i.e. on the [[https://github.com/constrict0r/autodebian][Autodebian project]]):
 
   #+BEGIN_SRC bash
   # Enter the repository folder.
@@ -37,7 +35,7 @@
       && basename $(pwd) && cd .. && ls
   #+END_SRC
 
-- To update the [[https://gitlab.com/constrict0r/docthis][docthis]] script (i.e. on the Autodebian project):
+* To update the [[https://gitlab.com/constrict0r/docthis][docthis]] script (i.e. on the Autodebian project):
 
   #+BEGIN_SRC bash
   git checkout master && git pull origin master && rm README.rst \

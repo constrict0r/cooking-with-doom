@@ -1,106 +1,105 @@
-#+title: Emacs - Org-CV
+#+title: [Emacs] Org-CV
 #+author: constrict0r
 #+date: <2020-02-06 jue>
-
-* Emacs - Org-CV
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-To generate a curriculum vitae using [[https://titan-c.gitlab.io/org-cv][org-cv]], install the packages
-*texlive-latex-base* and *texlive-latex-extra*:
+* To generate a curriculum vitae using [[https://titan-c.gitlab.io/org-cv][org-cv]]:
 
-  #+BEGIN_SRC bash
-  sudo apt install -y texlive-latex-base texlive-latex-extra
-  #+END_SRC
+  - Install the packages *texlive-latex-base* and *texlive-latex-extra*:
 
-Add the following configuration to your *init.el* file:
+    #+BEGIN_SRC bash
+    sudo apt install -y texlive-latex-base texlive-latex-extra
+    #+END_SRC
 
-  #+BEGIN_SRC lisp
-  ;; Install required packages if not installed.
-  (mapc #'(lambda (package)
-    (unless (package-installed-p package)
-      (package-install package)))
-        '(use-package)
-  )
+  - Add the following configuration to your *init.el* file:
 
-  (require 'use-package)
+    #+BEGIN_SRC lisp
+    ;; Install required packages if not installed.
+    (mapc #'(lambda (package)
+      (unless (package-installed-p package)
+        (package-install package)))
+          '(use-package)
+    )
 
-  (use-package ox-moderncv
-      :load-path "~/org/org-cv/"
-      :init (require 'ox-moderncv))
-  #+END_SRC
+    (require 'use-package)
 
-Clone the org-cv repository to you *org* folder:
+    (use-package ox-moderncv
+        :load-path "~/org/org-cv/"
+        :init (require 'ox-moderncv))
+    #+END_SRC
 
-  #+BEGIN_SRC bash
-  cd ~/org
-  git clone https://gitlab.com/Titan-C/org-cv.git
-  #+END_SRC
+  - Clone the org-cv repository to you *org* folder:
 
-Download the file *fontawesome.sty* on the path *~/org/org-cv*:
+    #+BEGIN_SRC bash
+    cd ~/org
+    git clone https://gitlab.com/Titan-C/org-cv.git
+    #+END_SRC
 
-  #+BEGIN_SRC bash
-  wget -O ~/org/org-cv/fontawesome.sty https://is.gd/z5m9Cq
-  #+END_SRC
+  - Download the file *fontawesome.sty* on the path *~/org/org-cv*:
 
-Create the file *~/org/org-cv/curriculum.org* with a content similar
-to the following.
+    #+BEGIN_SRC bash
+    wget -O ~/org/org-cv/fontawesome.sty https://is.gd/z5m9Cq
+    #+END_SRC
 
-  #+BEGIN_SRC org
-  #+TITLE: Computer Engineer
-  #+AUTHOR: Víctor Castro Mattei
-  #+email: constrict0r@protonmail.com
+  - Create the file *~/org/org-cv/curriculum.org* with the content:
 
-  #+CVSTYLE: classic
-  #+CVCOLOR: green
+    #+BEGIN_SRC org
+    #+TITLE: Computer Engineer
+    #+AUTHOR: Víctor Castro Mattei
+    #+email: constrict0r@protonmail.com
 
-  #+ADDRESS: San José, Costa Rica
-  #+ADDRESS: Montes de Oca, San Pedro
-  #+HOMEPAGE: geekl0g.wordpress.com
-  #+GITHUB: constrict0r
+    #+CVSTYLE: classic
+    #+CVCOLOR: green
 
-  * Employement
+    #+ADDRESS: San José, Costa Rica
+    #+ADDRESS: Montes de Oca, San Pedro
+    #+HOMEPAGE: geekl0g.wordpress.com
+    #+GITHUB: constrict0r
 
-  ** [[https://en.wikipedia.org/wiki/Freelancer][Freelance]]
-  :PROPERTIES:
-  :CV_ENV: cventry
-  :FROM: 2019
-  :TO: 2020
-  :LOCATION: Automation and Web Development Projects
-  :EMPLOYER:
-  :END:
+    * Employement
 
-  * Programming Languages
-  - [[https://en.wikipedia.org/wiki/C_(programming_language)][C]]
-  - [[https://en.wikipedia.org/wiki/Cascading_Style_Sheets][CSS 3]]
-  - [[https://www.haskell.org][Haskell]]
-  - [[https://en.wikipedia.org/wiki/HTML5][HTML 5]]
-  - [[https://www.java.com][Java]]
-  - [[https://en.wikipedia.org/wiki/JavaScript][JavaScript]]
-  - [[https://www.gnu.org/software/bash][Linux Shell Scripting]]
-  - [[https://www.php.net][PHP]]
-  - [[https://www.python.org][Python]]
-  - [[https://en.wikipedia.org/wiki/SQL][SQL]]
-  #+END_SRC
+    ** [[https://en.wikipedia.org/wiki/Freelancer][Freelance]]
+    :PROPERTIES:
+    :CV_ENV: cventry
+    :FROM: 2019
+    :TO: 2020
+    :LOCATION: Automation and Web Development Projects
+    :EMPLOYER:
+    :END:
 
-Open the file *~/org/org-cv/curriculum.org* with Emacs.
+    * Programming Languages
+    - [[https://en.wikipedia.org/wiki/C_(programming_language)][C]]
+    - [[https://en.wikipedia.org/wiki/Cascading_Style_Sheets][CSS 3]]
+    - [[https://www.haskell.org][Haskell]]
+    - [[https://en.wikipedia.org/wiki/HTML5][HTML 5]]
+    - [[https://www.java.com][Java]]
+    - [[https://en.wikipedia.org/wiki/JavaScript][JavaScript]]
+    - [[https://www.gnu.org/software/bash][Linux Shell Scripting]]
+    - [[https://www.php.net][PHP]]
+    - [[https://www.python.org][Python]]
+   - [[https://en.wikipedia.org/wiki/SQL][SQL]]
+    #+END_SRC
 
-On Emacs press the keybinding **C-:** to execute the **Eval** command, type
-the following command and press *RET*:
+  - Open the file *~/org/org-cv/curriculum.org* with Emacs.
 
-  #+BEGIN_SRC lisp
-  (org-export-to-file 'moderncv "curriculum.tex")
-  #+END_SRC
+  - On Emacs press the keybinding **C-:** to execute the **Eval** command.
 
-The previous command will generate the file *~/org/org-cv/curriculum.tex*,
-to compile that file and generate the final *~/org/org-cv/curriculum.pdf* file,
-press **C-:** again, type the following command and press *RET*:
+  - Type the following command and press *RET*:
 
-  #+BEGIN_SRC lisp
-  (org-latex-compile "curriculum.tex")
-  #+END_SRC
+    #+BEGIN_SRC lisp
+    (org-export-to-file 'moderncv "curriculum.tex")
+    #+END_SRC
+
+  - To generate  the *~/org/org-cv/curriculum.pdf* file, press **C-:** again.
+
+  - Type the following command and press *RET*:
+
+    #+BEGIN_SRC lisp
+    (org-latex-compile "curriculum.tex")
+    #+END_SRC
 
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream

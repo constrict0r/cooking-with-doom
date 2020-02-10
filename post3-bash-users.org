@@ -1,14 +1,12 @@
-#+title: Bash - Users
+#+title: [Bash] Users
 #+author: constrict0r
 #+date: <2020-01-30 jue>
-
-* Bash - Users
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-- To add an existent user to a system group:
+* To add an existent user to a system group:
 
   #+BEGIN_SRC bash
   # Add the group.
@@ -16,9 +14,6 @@
 
   # Add current user to group with adduser.
   sudo adduser $(whoami) libvirtd
-
-  # Add current user to group with usermod.
-  sudo usermod -a -G groupName $(whoami)
   #+END_SRC
 
 #+CAPTION: Enjoy

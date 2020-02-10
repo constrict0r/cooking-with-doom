@@ -1,12 +1,12 @@
-#+title: SSH - Keys
+#+title: [Bash] SSH
 #+author: constrict0r
 #+date: <2020-01-31 vie>
-
-* SSH - Keys
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
+
+* Generating Keys
 
 - To generate a new ssh key:
 
