@@ -234,6 +234,12 @@ def main(path, info):
   #+BEGIN_SRC bash
   poetry run amanita -h
   #+END_SRC
+
+- You can run the tests with the command:
+
+  #+BEGIN_SRC bash
+  poetry run tox
+  #+END_SRC
   
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
