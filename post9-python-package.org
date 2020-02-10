@@ -6,7 +6,7 @@
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-* To create a new Python Package quickly:
+* To create a new Python package quickly:
 
   For this tasks Doom recommends using:
 
