@@ -1,66 +1,64 @@
-#+title: Qemu - Handle Snapshot
+#+title: QEMU: Handle Snapshot
 #+author: constrict0r
 #+date: <2020-01-28 mar>
-
-* Qemu - Handle Snapshot
 
 #+CAPTION: Doom
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-To take a snapshot to a virtual machine created via Virt Manager (or similar),
-follow the next steps:
+* To take a snapshot to a virtual machine created via Virt Manager (or similar),
+  follow the next steps:
 
-- Become the root user:
+  - Become the root user:
 
-  #+BEGIN_SRC bash
-  sudo su
-  #+END_SRC
+    #+BEGIN_SRC bash
+    sudo su
+    #+END_SRC
 
-- Go to the *images* directory of your local *libvirt* installation:
+  - Go to the *images* directory of your local *libvirt* installation:
 
-  #+BEGIN_SRC bash
-  cd /var/lib/libvirt/images
-  #+END_SRC
+    #+BEGIN_SRC bash
+    cd /var/lib/libvirt/images
+    #+END_SRC
   
-- Create a new file called *initial.xml* there:
+  - Create a new file called *initial.xml* there:
 
-  #+BEGIN_SRC bash
-  nano initial.xml  
-  #+END_SRC
+    #+BEGIN_SRC bash
+    nano initial.xml  
+    #+END_SRC
 
-- Add the following content to it and save it:
+  - Add the following content to it and save it:
 
-  #+BEGIN_SRC xml
-  <domainsnapshot>
-      <name>initial</name>
-      <description>Initial Virtual Machine Configuration</description>
-  </domainsnapshot>
-  #+END_SRC
+    #+BEGIN_SRC xml
+    <domainsnapshot>
+        <name>initial</name>
+        <description>Initial Virtual Machine Configuration</description>
+    </domainsnapshot>
+    #+END_SRC
 
-- Take the snapshot (using here 'debian' as the VM name):
+  - Take the snapshot (using here 'debian' as the VM name):
 
-  #+BEGIN_SRC bash
-  virsh snapshot-create debian initial.xml
-  #+END_SRC
+    #+BEGIN_SRC bash
+    virsh snapshot-create debian initial.xml
+    #+END_SRC
 
-- You can list the snapshots that a Virtual Machine has by using the command:
+  - You can list the snapshots that a Virtual Machine has by using the command:
 
-  #+BEGIN_SRC bash
-  virsh snapshot-list debian
-  #+END_SRC
+    #+BEGIN_SRC bash
+    virsh snapshot-list debian
+    #+END_SRC
 
-- You can restore a snapshot using the command:
+  - You can restore a snapshot using the command:
 
-  #+BEGIN_SRC bash
-  virsh snapshot-revert debian initial
-  #+END_SRC
+    #+BEGIN_SRC bash
+    virsh snapshot-revert debian initial
+    #+END_SRC
 
-- You can delete a snapshot using the command:
+  - You can delete a snapshot using the command:
 
-  #+BEGIN_SRC bash
-  virsh snapshot-delete debian initial
-  #+END_SRC
+    #+BEGIN_SRC bash
+    virsh snapshot-delete debian initial
+    #+END_SRC
 
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
