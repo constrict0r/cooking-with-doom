@@ -1,0 +1,23 @@
+#+title: [Bash] ffmpeg Command
+#+author: constrict0r
+#+date: <2020-02-11 mar>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To convert from *wav* to *mp3* run:
+  
+    #+BEGIN_SRC bash
+    ffmpeg -i 01\ -\ My\ Song.wav -acodec mp3 -ab 360K 01\ -\ My\ Song.mp3
+    #+END_SRC
+
+* To convert from *m4a* to *mp3* run:
+
+    #+BEGIN_SRC bash
+    ffmpeg -v 5 -y -i 01\ -\ My\ Song.m4a -ac 2 -ab 360k 02\ -\ My\ Song.mp3
+    #+END_SRC
+    
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
