@@ -24,7 +24,15 @@
     sudo apt install bchunk flac
     bchunk -w image.bin image.cue track
     for f in track*.wav; do flac $f; done
-    #+END_SRC    
+    #+END_SRC
+
+* To convert from *flac* to *mp3*:
+
+    #+BEGIN_SRC bash
+    ffmpeg -i 01\ -\ My\ Song.flac -ab 320k -map_metadata 0 -id3v2_version 3 01\ -\ My\ Song.mp3
+    #+END_SRC
+
+
 
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
