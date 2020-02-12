@@ -1,4 +1,4 @@
-#+title: [Bash] ffmpeg Command
+#+title: [Bash] Audio Handling
 #+author: constrict0r
 #+date: <2020-02-11 mar>
 
@@ -17,7 +17,15 @@
     #+BEGIN_SRC bash
     ffmpeg -v 5 -y -i 01\ -\ My\ Song.m4a -ac 2 -ab 360k 02\ -\ My\ Song.mp3
     #+END_SRC
-    
+
+* To extract audio tracks from a *.bin* and *.cue* files:
+
+    #+BEGIN_SRC bash
+    sudo apt install bchunk flac
+    bchunk -w image.bin image.cue track
+    for f in track*.wav; do flac $f; done
+    #+END_SRC    
+
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
 [[./img/ice-cream.png]]
