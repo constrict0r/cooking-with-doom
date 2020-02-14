@@ -6,9 +6,9 @@
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-* Procedure to setup the whole Latverian Infraestructure
+* Procedure to Setup the Whole Latverian Infraestructure
 
-** Latverian PC setup
+** Latverian PC Setup
 
 *** Requirements
 
@@ -76,7 +76,7 @@
      ./configure.sh
      #+END_SRC
 
-   * On Gnome, open the Telegram application, once is open, pin it to the dock.
+**** On Gnome, open the Telegram application and pin it to the dock.
 
  #+CAPTION: Enjoy
  #+NAME:   fig:Ice Cream

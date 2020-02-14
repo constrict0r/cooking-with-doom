@@ -1,0 +1,36 @@
+#+title: [Emacs] Commands
+#+author: constrict0r
+#+date: <2020-02-14 vie>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* Most Frequent Commands
+
+** Registers
+   
+   - C-x r <SPC> => Save the current position to a register.
+
+   - C-x r j => Jump to saved register.
+
+** Replace
+
+   - M-% => Query and replace.
+
+** Org Mode
+
+  * Labels
+
+    - C-c C-c => Set tag.
+
+*** Tables
+
+    - M-S-RIGHT => Insert a new colum to the left of point.
+
+    - S-RET => Copy value from previous row field.
+
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
