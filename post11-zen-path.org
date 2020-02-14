@@ -16,7 +16,9 @@
 
     - An USB drive.
 
-*** Generate the Preseeded ISO
+*** Preseed ISO and Unattended Installation
+
+    From the working Debian do the following:
 
 **** Install Ansible:
 
@@ -63,6 +65,11 @@
 
 **** Restart from your USB drive to execute the unattended installation.
 
+*** Apply Resting Configuration
+
+    There are some tasks that were not possible to run during the
+    unattended installation process, to complete the setup do:
+
 **** On Debian, open a terminal and go to the *Documentos* folder:
 
      #+BEGIN_SRC bash
@@ -77,6 +84,8 @@
      #+END_SRC
 
 **** On Gnome, open the Telegram application and pin it to the dock.
+
+**** Open and close Emacs to setup everything just right (wait a bit on each opening).
 
  #+CAPTION: Enjoy
  #+NAME:   fig:Ice Cream
