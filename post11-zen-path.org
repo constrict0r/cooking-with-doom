@@ -1,0 +1,83 @@
+#+title: [Zen] Path
+#+author: constrict0r
+#+date: <2020-01-28 mar>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* Procedure to setup the whole Latverian Infraestructure
+
+** Latverian PC setup
+
+*** Requirements
+
+    - A working Debian or Ubuntu Linux OS.
+
+    - An USB drive.
+
+*** Generate the Preseeded ISO
+
+**** Install Ansible:
+
+     #+BEGIN_SRC bash
+     python3 -m pip install ansible
+     #+END_SRC
+
+**** Obtain the Madvillain configuration file:
+
+     #+BEGIN_SRC bash
+     wget -O madvillain.yml https://is.gd/ZLS1IL
+     #+END_SRC
+
+**** Install the Ansible role *constrict0r.iso*:
+
+     #+BEGIN_SRC bash
+     ansible-galaxy install constrict0r.iso
+     #+END_SRC
+
+**** Include the role passing all varibles needed:
+
+      #+BEGIN_SRC bash
+      ansible localhost -m include_role -a name=constrict0r.iso -K -e \
+          'username=constrict0r userpass=1234 rootpass=1234 device=sda preseed=true \
+          preseed_wireless=true preseed_partitioning=true preseed_last_question=true \
+          preseed_custom=/home/constrict0r/Documentos/madvillain.yml networkname="MY NETWORK" \
+          networkpass="my-network-pass" hostname="latveria" domain="amanita" \
+          firmware_path=/home/constrict0r/Instaladores/firmware'
+      #+END_SRC
+
+**** Rename the generated *remaster.iso* file as *remaster.img* (prevents no-CD issue):
+    
+     #+BEGIN_SRC bash
+     mv remaster.iso remaster.img
+     #+END_SRC
+
+**** Copy *remaster.img* to your USB drive:
+
+     #+BEGIN_SRC bash
+     su -c 'dd if=/path/to/remaster.img of=/dev/sdx'
+     #+END_SRC
+
+**** Enable **boot from USB** on your computer configuration (i.e.: UEFI).
+
+**** Restart from your USB drive to execute the unattended installation.
+
+**** On Debian, open a terminal and go to the *Documentos* folder:
+
+     #+BEGIN_SRC bash
+     cd ~/Documentos
+     #+END_SRC
+
+**** Give execution permissions and execute the *configure.sh* script:
+
+     #+BEGIN_SRC bash
+     chmod +x configure.sh
+     ./configure.sh
+     #+END_SRC
+
+   * On Gnome, open the Telegram application, once is open, pin it to the dock.
+
+ #+CAPTION: Enjoy
+ #+NAME:   fig:Ice Cream
+ [[./img/ice-cream.png]]
