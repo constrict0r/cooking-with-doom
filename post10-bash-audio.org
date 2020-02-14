@@ -32,6 +32,12 @@
     ffmpeg -i 01\ -\ My\ Song.flac -ab 320k -map_metadata 0 -id3v2_version 3 01\ -\ My\ Song.mp3
     #+END_SRC
 
+* To convert from *m4a* to *mp3* run:
+
+    #+BEGIN_SRC bash
+    ffmpeg -v 5 -y -i 01\ -\ My\ Song.m4a -acodec libmp3lame -ac 2 -ab 320k 01\ -\ My\ Song.mp3
+    #+END_SRC
+
 
 
 #+CAPTION: Enjoy
