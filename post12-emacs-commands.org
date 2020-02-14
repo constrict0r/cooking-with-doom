@@ -20,6 +20,12 @@
 
 ** Org Mode
 
+*** GTD
+
+    - C-c C-w => Refile an entry.
+
+    - C-c C-x C-a => Archive an entry.
+
   * Labels
 
     - C-c C-c => Set tag.
