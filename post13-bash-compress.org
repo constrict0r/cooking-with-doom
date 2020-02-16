@@ -1,0 +1,19 @@
+#+title: [Bash] Compress
+#+author: constrict0r
+#+date: <2020-02-16 dom>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* Compress Files Commands
+
+** Unzip:
+
+   #+BEGIN_SRC bash
+   zip -9 my-file.zip my-file/*
+   #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]   
