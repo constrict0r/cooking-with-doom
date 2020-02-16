@@ -8,6 +8,10 @@
 
 * Most Frequent Commands
 
+** Movement
+
+   - M-m => Jump to first non-white character on line.
+   
 ** Registers
    
    - C-x r <SPC> => Save the current position to a register.
