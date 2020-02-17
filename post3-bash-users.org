@@ -6,6 +6,12 @@
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
+* To create a new user.
+
+  #+BEGIN_SRC bash
+  useradd -m -d /home/username -g users -s /bin/bash username
+  #+END_SRC
+
 * To add an existent user to a system group:
 
   #+BEGIN_SRC bash
