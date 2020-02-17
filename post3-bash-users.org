@@ -9,6 +9,8 @@
 * To create a new user.
 
   #+BEGIN_SRC bash
+  /usr/sbin/useradd -m -d /home/username -g users -s /bin/bash username
+  # Or just:
   useradd -m -d /home/username -g users -s /bin/bash username
   #+END_SRC
 
