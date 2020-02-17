@@ -6,6 +6,10 @@
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
+Be careful ... the names of the commands used here can be confusing sometimes
+because it all looks similar, read careful what command are you using and what are
+you doing.
+
 * To create a new user.
 
   #+BEGIN_SRC bash
@@ -24,10 +28,16 @@
   sudo adduser $(whoami) libvirtd
   #+END_SRC
 
-* To delete a user from a group:
+* To remove an user from a group:
 
   #+BEGIN_SRC 
-  deluser user group  
+  deluser username groupname
+  #+END_SRC
+
+* To delete an user:
+
+  #+BEGIN_SRC bash
+  /usr/sbin/userdel username && rm -rf /home/username
   #+END_SRC
 
 #+CAPTION: Enjoy
