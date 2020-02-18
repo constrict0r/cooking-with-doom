@@ -1,0 +1,75 @@
+#+title: [Docker] Usage
+#+author: constrict0r
+#+date: <2020-02-18 mar>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* Docker usage:
+
+** Basic Usage:
+
+*** Pull an image from DockerHub:
+
+    #+BEGIN_SRC bash
+    docker pull <username>/<image-name>:latest    
+    #+END_SRC
+
+*** Run a container from the downloaded image mounting a folder on it:
+
+    #+BEGIN_SRC bash
+    docker run -v /home/username/local-folder:/virtual-folder -p 8888:8888/tcp --name <container-name> -it <username>/<image-name>
+    #+END_SRC
+
+*** Access to running container terminal:
+
+    #+BEGIN_SRC bash
+    docker exec -it <container-name> /bin/bash
+    #+END_SRC
+
+** Listings:
+
+*** List containers:
+
+    #+BEGIN_SRC bash
+    docker ps -a
+    #+END_SRC
+
+*** List images:
+
+    #+BEGIN_SRC bash
+    docker image ls
+    #+END_SRC
+
+** Deletion:
+
+*** Delete a container:
+
+    #+BEGIN_SRC bash
+    docker rm <container-name|container-id>
+    #+END_SRC
+
+*** Delete an image:
+
+    #+BEGIN_SRC bash
+    docker image rm <image-name|image-id>
+    #+END_SRC
+
+** [[https://github.com/sstephenson/bats][Bats]]:
+
+*** Download the image:
+
+    #+BEGIN_SRC bash
+    docker pull bats/bats:latest
+    #+END_SRC
+
+*** Run your tests with the container (must use *$(pwd)* or it won't work):
+
+    #+BEGIN_SRC bash
+    docker run -it -v "$(pwd)/repos/my-repo:/code" bats/bats:latest /code/test
+    #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]   
