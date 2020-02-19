@@ -11,6 +11,8 @@
 ** Movement
 
    - M-m => Jump to first non-white character on line.
+
+   - M-g M-g => Go to line.
    
 ** Registers
    
