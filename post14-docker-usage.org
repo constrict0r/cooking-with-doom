@@ -100,7 +100,7 @@
 **** Download the image:
 
      #+BEGIN_SRC bash
-     docker pull debian:alpine
+     docker pull debian:stable-slim
      #+END_SRC
 
 **** Run your tests inside image:
@@ -109,7 +109,7 @@
      docker run \
          -it \
          --mount type=bind,soure="$(pwd)"/my-repo,target=/app \
-         debian:alpine \
+         debian:stable-slim \
          /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
      #+END_SRC
 
