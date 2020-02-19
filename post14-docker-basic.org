@@ -6,7 +6,7 @@
 #+NAME:   fig:cooking-with-doom
 [[./img/cooking-with-doom.png]]
 
-* Docker usage:
+* Docker Usage
 
 ** Basic Usage:
 
@@ -44,10 +44,23 @@
 
 ** Deletion:
 
+*** Stop a container:
+
+    #+BEGIN_SRC bash
+    docker stop <container-name|container-id>
+    #+END_SRC
+
 *** Delete a container:
 
     #+BEGIN_SRC bash
     docker rm <container-name|container-id>
+    #+END_SRC
+
+*** Delete all containers:
+
+    #+BEGIN_SRC bash
+    docker stop $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
     #+END_SRC
 
 *** Delete an image:
@@ -56,20 +69,46 @@
     docker image rm <image-name|image-id>
     #+END_SRC
 
-** [[https://github.com/sstephenson/bats][Bats]]:
+* Specific Setups
 
-*** Download the image:
+** [[https://github.com/sstephenson/bats][Bats]]
+   
+*** Bats Official Image
 
-    #+BEGIN_SRC bash
-    docker pull bats/bats:latest
-    #+END_SRC
+    This image is useful to execute tests that do not have too much
+    requirements, for example if it needs 'apt' or 'sudo' then you better
+    use another image (i.e. Debian).
 
-*** Run your tests with the container (must use *$(pwd)* or it won't work):
+**** Download the image:
 
-    #+BEGIN_SRC bash
-    docker run -it -v "$(pwd)/repos/my-repo:/code" bats/bats:latest /code/test
-    #+END_SRC
+     #+BEGIN_SRC bash
+     docker pull bats/bats:latest
+     #+END_SRC
 
-#+CAPTION: Enjoy
-#+NAME:   fig:Ice Cream
-[[./img/ice-cream.png]]   
+**** Run your tests with the container (must use *$(pwd)* or it won't work):
+
+     #+BEGIN_SRC bash
+     docker run \
+         -it -v "$(pwd)/repos/my-repo:/code" bats/bats:latest /code/test
+     #+END_SRC
+
+*** Bats with Debian Image
+
+**** Download the image:
+
+     #+BEGIN_SRC bash
+     docker pull debian:latest
+     #+END_SRC
+
+**** Run the image:
+
+     #+BEGIN_SRC bash
+     docker run \
+         --name debian \
+         --mount type=bind,soure="$(pwd)"/my-repo,target=/app \
+         debian:latest
+     #+END_SRC
+
+ #+CAPTION: Enjoy
+ #+NAME:   fig:Ice Cream
+ [[./img/ice-cream.png]]   
