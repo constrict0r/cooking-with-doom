@@ -108,9 +108,9 @@
      #+BEGIN_SRC bash
      docker run \
          -it \
-         --mount type=bind,soure="$(pwd)"/my-repo,target=/app \
+         --mount type=bind,source=/home/constrict0r/repos/doom/docthis,target=/app \
          debian:stable-slim \
-         /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
+	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
      #+END_SRC
 
  #+CAPTION: Enjoy
