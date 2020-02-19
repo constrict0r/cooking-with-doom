@@ -68,7 +68,8 @@
 *** Apply Resting Configuration
 
     There are some tasks that were not possible to run during the
-    unattended installation process, to complete the setup do:
+    unattended installation process, when you first enter the newly installed
+    Debian follow the next procedure to apply the resting setup:
 
 **** On Debian, open a terminal and go to the *Documentos* folder:
 
@@ -85,7 +86,7 @@
 
 **** On Gnome, open the Telegram application and pin it to the dock.
 
-**** Open and close Emacs to setup everything just right (wait a bit on each opening).
+**** Open and close Emacs 3 times to setup everything just right (wait a bit on each open).
 
  #+CAPTION: Enjoy
  #+NAME:   fig:Ice Cream
