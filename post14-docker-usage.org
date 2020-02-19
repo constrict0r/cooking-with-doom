@@ -85,11 +85,11 @@
      docker pull bats/bats:latest
      #+END_SRC
 
-**** Run your tests with the container (must use *$(pwd)* or it won't work):
+**** Run your tests with the container (use *$(pwd)* or a global path):
 
      #+BEGIN_SRC bash
      docker run \
-         -it -v "$(pwd)/repos/my-repo:/code" bats/bats:latest /code/test
+         -it -v "$(pwd)"/my-repo:/code bats/bats:latest /code/test
      #+END_SRC
 
 ** [[https://gitlab.com/constrict0r/testme.sh][testme]]
@@ -108,7 +108,7 @@
      #+BEGIN_SRC bash
      docker run \
          -it \
-         --mount type=bind,source=/home/constrict0r/repos/doom/docthis,target=/app \
+         --mount type=bind,source=/home/username/my-repo,target=/app \
          debian:stable-slim \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
      #+END_SRC
