@@ -19,13 +19,38 @@
 *** Run a container from the downloaded image mounting a folder on it:
 
     #+BEGIN_SRC bash
-    docker run -v /home/username/local-folder:/virtual-folder -p 8888:8888/tcp --name <container-name> -it <username>/<image-name>
+    # With run-time volume.
+    docker run \
+        -v /home/username/local-folder:/virtual-folder \
+        -p 8888:8888/tcp \
+        --name <container-name> \
+        <username>/<image-name>
+
+    # Or with mount (recommended way).
+    docker run \
+        -it \
+        --mount type=bind,source="$(pwd)",target=/app \
+        -p 8888:8888/tcp \
+        --name <container-name> \
+        <username/<image-name>
     #+END_SRC
 
 *** Access to running container terminal:
 
     #+BEGIN_SRC bash
-    docker exec -it <container-name> /bin/bash
+    docker exec -it <container-name|container-id> /bin/bash
+    #+END_SRC
+
+*** Stop a container:
+
+    #+BEGIN_SRC bash
+    docker stop <container-name|container-id>
+    #+END_SRC
+
+*** Stop all containers:
+
+    #+BEGIN_SRC bash
+    docker stop $(docker ps -a -q)
     #+END_SRC
 
 ** Listings:
@@ -43,12 +68,6 @@
     #+END_SRC
 
 ** Deletion:
-
-*** Stop a container:
-
-    #+BEGIN_SRC bash
-    docker stop <container-name|container-id>
-    #+END_SRC
 
 *** Delete a container:
 
@@ -122,6 +141,14 @@
          --mount type=bind,source=/home/username/my-repo,target=/app \
          debian:stable-slim \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
+
+     # Or even deleting the previous containers:
+     docker rm $(docker ps -a -q) && docker run \
+         -it \
+         --mount type=bind,source="$(pwd)",target=/app \
+         debian:stable-slim \
+	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
+
      #+END_SRC
 
  #+CAPTION: Enjoy
