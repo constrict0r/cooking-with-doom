@@ -92,21 +92,25 @@
          -it -v "$(pwd)/repos/my-repo:/code" bats/bats:latest /code/test
      #+END_SRC
 
-*** Bats with Debian Image
+** [[https://gitlab.com/constrict0r/testme.sh][testme]]
+
+   To execute your project's tests (using testme.sh) inside a Docker
+   container, follow the next instructions.
 
 **** Download the image:
 
      #+BEGIN_SRC bash
-     docker pull debian:latest
+     docker pull debian:alpine
      #+END_SRC
 
-**** Run the image:
+**** Run your tests inside image:
 
      #+BEGIN_SRC bash
      docker run \
-         --name debian \
+         -it \
          --mount type=bind,soure="$(pwd)"/my-repo,target=/app \
-         debian:latest
+         debian:alpine \
+         /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
      #+END_SRC
 
  #+CAPTION: Enjoy
