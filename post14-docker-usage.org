@@ -89,7 +89,11 @@
 
      #+BEGIN_SRC bash
      docker run \
-         -it -v "$(pwd)"/my-repo:/code bats/bats:latest /code/test
+         -it -v "$(pwd)":/app bats/bats:latest /app/test
+
+     # Or:
+     docker run \
+         -it -v /home/username/my-repo:/app bats/bats:latest /app/test
      #+END_SRC
 
 ** [[https://gitlab.com/constrict0r/testme.sh][testme]]
@@ -103,9 +107,16 @@
      docker pull debian:stable-slim
      #+END_SRC
 
-**** Run your tests inside image:
+**** Run your tests inside image (use *$(pwd)* or a global path):
 
      #+BEGIN_SRC bash
+     docker run \
+         -it \
+         --mount type=bind,source="$(pwd)",target=/app \
+         debian:stable-slim \
+	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
+
+     # Or:
      docker run \
          -it \
          --mount type=bind,source=/home/username/my-repo,target=/app \
