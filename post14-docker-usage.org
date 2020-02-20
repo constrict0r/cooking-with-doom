@@ -149,6 +149,12 @@
          debian:stable-slim \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
 
+     # Or using Ubuntu:
+     docker run \
+         -it \
+          --mount type=bind,source=/home/username/my-repo,target=/app \
+         ubuntu:xenial \
+	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"        
      #+END_SRC
 
  #+CAPTION: Enjoy
