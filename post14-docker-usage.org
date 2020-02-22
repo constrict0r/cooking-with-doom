@@ -35,6 +35,15 @@
         <username/<image-name>
     #+END_SRC
 
+*** Run a container and keep running it:
+
+    #+BEGIN_SRC bash
+    docker run \
+        -it \
+        debian:stable-slim \
+	 /bin/bash -c 'tail -f /dev/null'
+    #+END_SRC
+
 *** Access to running container terminal:
 
     #+BEGIN_SRC bash
@@ -153,7 +162,7 @@
      docker run \
          -it \
           --mount type=bind,source="$(pwd)",target=/app \
-         ubuntu:xenial \
+         ubuntu:bionic \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"        
      #+END_SRC
 
