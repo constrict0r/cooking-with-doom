@@ -30,6 +30,10 @@
 
    - M-% => Query and replace.
 
+** Eshell
+
+   - M-p => Go to previous command.
+
 ** Org Mode
 
 *** GTD
