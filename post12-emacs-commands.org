@@ -8,6 +8,12 @@
 
 * Most Frequent Commands
 
+** Buffer
+
+   - C-x C-v RET => Reopen (refresh) current file.
+
+   - C-x C-w => Save As.
+
 ** Movement
 
    - M-m => Jump to first non-white character on line.
