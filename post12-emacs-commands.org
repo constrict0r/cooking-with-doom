@@ -21,6 +21,10 @@
    - M-g M-g => Go to line.
 
    - C-u - C-x o => Go to previous window.
+
+** Regions
+
+   - C-M-\ => Indent region.
    
 ** Registers
    
