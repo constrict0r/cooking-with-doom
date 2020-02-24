@@ -97,6 +97,15 @@
     docker image rm <image-name|image-id>
     #+END_SRC
 
+*** Run a container and delete when it stops:
+
+    #+BEGIN_SRC bash
+    docker run \
+        -it --rm \
+        debian:stable-slim \
+	/bin/bash -c 'tail -f /dev/null'
+    #+END_SRC
+
 * Specific Setups
 
 ** [[https://github.com/sstephenson/bats][Bats]]
@@ -139,29 +148,29 @@
 
      #+BEGIN_SRC bash
      docker run \
-         -it \
+         -it --rm \
          --mount type=bind,source="$(pwd)",target=/app \
          debian:stable-slim \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
 
      # Or:
      docker run \
-         -it \
+         -it --rm \
          --mount type=bind,source=/home/username/my-repo,target=/app \
          debian:stable-slim \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
 
      # Or even deleting the previous containers:
      docker rm $(docker ps -a -q) && docker run \
-         -it \
+         -it --rm \
          --mount type=bind,source="$(pwd)",target=/app \
          debian:stable-slim \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"
 
      # Or using Ubuntu:
      docker run \
-         -it \
-          --mount type=bind,source="$(pwd)",target=/app \
+         -it --rm \
+         --mount type=bind,source="$(pwd)",target=/app \
          ubuntu:bionic \
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"        
      #+END_SRC
