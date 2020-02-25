@@ -22,6 +22,8 @@
 
    - C-u - C-x o => Go to previous window.
 
+   - C-M-n => Jump to closing parenthesis.
+
 ** Regions
 
    - C-M-\ => Indent region.
