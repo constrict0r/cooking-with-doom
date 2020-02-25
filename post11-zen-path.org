@@ -88,6 +88,6 @@
 
 **** Open and close Emacs 3 times to setup everything just right (wait a bit on each open).
 
- #+CAPTION: Enjoy
- #+NAME:   fig:Ice Cream
- [[./img/ice-cream.png]]
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
