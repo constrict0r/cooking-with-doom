@@ -175,6 +175,6 @@
 	 /bin/bash -c "apt update && apt install -y bats && cd /app && ./testme.sh"        
      #+END_SRC
 
- #+CAPTION: Enjoy
- #+NAME:   fig:Ice Cream
- [[./img/ice-cream.png]]   
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]   

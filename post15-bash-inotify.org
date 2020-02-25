@@ -12,3 +12,7 @@
   sudo apt install -y inotify-tools
   while true; do inotifywait -e modify ./test/testme.bats | ./testme.sh -d; done
   #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]   
