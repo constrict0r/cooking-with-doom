@@ -1,0 +1,14 @@
+#+title: [Bash] Inotify
+#+author: constrict0r
+#+date: <2020-02-24 lun>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To watch a file and run tests when changed:
+
+  #+BEGIN_SRC bash
+  sudo apt install -y inotify-tools
+  while true; do inotifywait -e modify ./test/testme.bats | ./testme.sh -d; done
+  #+END_SRC
