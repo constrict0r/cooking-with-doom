@@ -9,15 +9,28 @@
 * To run Quake Arena III with Ioquake3:
 
   #+BEGIN_SRC bash
+  # Install requirements.
   sudo apt install -y libncurses5
+
+  # Install newest ioquake3 motor.
   wget http://ioquake3.org/files/1.36/installer/ioquake3-1.36-7.1.x86_64.run
-  wget http://ioquake3.org/files/1.36/data/ioquake3-q3a-1.32-9.run
   chmod +x ioquake3-1.36-7.1.x86_64.run
   sudo ./ioquake3-1.36-7.1.x86_64.run
+
+  # Install quake3 game.
+  wget http://ioquake3.org/files/1.36/data/ioquake3-q3a-1.32-9.run
   chmod +x ioquake3-q3a-1.32-9.run
   sudo ./ioquake3-q3a-1.32-9.run
+
+  # Install game data.
   wget https://github.com/nrempel/q3-server/raw/master/baseq3/pak0.pk3
   cp pak0.pk3 ~/.q3a/baseq3
+
+  # Patch game: recursive error after: User Interface is version 3, expected 6.
+  wget https://www.ioquake3.org/data/quake3-latest-pk3s.zip
+  unzip quake3-latest-pk3s.zip
+  cp -rvf quake3-latest-pk3s/baseq3 ~/.q3a
+  cp -rvf quake3-latest-pk3s/missionpack ~/.q3a
   #+END_SRC
 
 #+CAPTION: Enjoy
