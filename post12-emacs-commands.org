@@ -50,6 +50,8 @@
 
     - C-c C-x C-a => Archive an entry.
 
+    - M-C => Show calendar.
+
 *** Labels
 
     - C-c C-c => Set tag.
