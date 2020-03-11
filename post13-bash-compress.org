@@ -14,6 +14,14 @@
    zip -9 my-file.zip my-file/*
    #+END_SRC
 
+* Uncompress Files Commands
+
+** 7zip:
+
+   #+BEGIN_SRC bash
+   7z x my-file.rar
+   #+END_SRC
+
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
 [[./img/ice-cream.png]]   
