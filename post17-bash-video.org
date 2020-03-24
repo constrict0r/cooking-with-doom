@@ -17,14 +17,14 @@
 ** Extract images from video:
 
      #+BEGIN_SRC bash
-     ffmpeg -i video.mp4 -r 5 'frames/frame-%03d.jpg'
+     ffmpeg -i video.mp4 -r 5 'frames/frame-%03d.png'
      #+END_SRC
 
 ** Convert images to gif:
 
    #+BEGIN_SRC bash
    cd frames
-   convert -delay 20 -loop 0 *.jpg myimage.gif
+   convert -delay 20 -loop 0 -layers Optimize *.png myimage.gif
    #+END_SRC
 
 
