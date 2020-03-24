@@ -1,0 +1,33 @@
+#+title: [Bash] Video Handling
+#+author: constrict0r
+#+date: <2020-03-24 mar>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To convert from *mp4* to *gif* run:
+
+** Create a frames directory in the same directory as .mp4 file.
+
+    #+BEGIN_SRC bash
+    mkdir frames
+    #+END_SRC
+
+** Extract images from video:
+
+     #+BEGIN_SRC bash
+     ffmpeg -i video.mp4 -r 5 'frames/frame-%03d.jpg'
+     #+END_SRC
+
+** Convert images to gif:
+
+   #+BEGIN_SRC bash
+   cd frames
+   convert -delay 20 -loop 0 *.jpg myimage.gif
+   #+END_SRC
+
+
+ #+CAPTION: Enjoy
+ #+NAME:   fig:Ice Cream
+ [[./img/ice-cream.png]]
