@@ -27,6 +27,11 @@
    7z x my-file.rar
    #+END_SRC
 
+** Tar:
+   #+BEGIN_SRC bash
+   tar -xf file.tar.xz
+   #+END_SRC
+
 #+CAPTION: Enjoy
 #+NAME:   fig:Ice Cream
 [[./img/ice-cream.png]]   
