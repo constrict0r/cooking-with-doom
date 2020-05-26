@@ -11,7 +11,7 @@
 ** Install the library *php7.3-mbstring*:
 
     #+BEGIN_SRC bash
-    sudo apt-get install php7.3-mbstrin
+    sudo apt-get install php7.3-mbstring
     #+END_SRC
 
 ** Download the wp-cli executable:
