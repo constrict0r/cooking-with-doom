@@ -1,0 +1,44 @@
+#+title: [WordPress] Translate
+#+author: constrict0r
+#+date: <2020-05-26 mar>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To create a translation for a plugin:
+
+** Install the library *php7.3-mbstring*:
+
+    #+BEGIN_SRC bash
+    sudo apt-get install php7.3-mbstrin
+    #+END_SRC
+
+** Download the wp-cli executable:
+
+     #+BEGIN_SRC bash
+     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+     #+END_SRC
+
+** Give execution permissions to the downloaded file:
+
+   #+BEGIN_SRC bash
+   chmod +x wp-cli.phar
+   #+END_SRC
+
+** Move the executable file to the global system path:
+
+   #+BEGIN_SRC bash
+   sudo mv wp-cli.phar /usr/local/bin/wp
+   #+END_SRC
+
+** Generate the *.pot* file for the plugin:
+
+   #+BEGIN_SRC bash
+   cd plugin_dir
+   wp i18n make-pot . languages/plugin-slug.pot
+   #+END_SRC
+
+ #+CAPTION: Enjoy
+ #+NAME:   fig:Ice Cream
+ [[./img/ice-cream.png]]
