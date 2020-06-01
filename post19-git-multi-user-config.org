@@ -1,0 +1,29 @@
+#+title: [Git] Multi-user Configuration
+#+author: constrict0r
+#+date: <2020-06-01 lun>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To enable multiuser configuration for git:
+
+** Configure the file *~/.gitconfig* like:
+
+    #+BEGIN_SRC bash
+    [user]
+    name = John Doe
+    email = john@doe.tld
+
+    [includeIf "gitdir:~/repos/"]
+    path = ~/repos/.gitconfig
+    #+END_SRC
+
+** Create the file *~/repos/.gitconfig* with a content similar to the
+   following:
+
+     #+BEGIN_SRC bash
+     [user]  name = johnny
+             email = johnny@walker.com
+     #+END_SRC
+
