@@ -39,6 +39,12 @@
    wp i18n make-pot . languages/plugin-slug.pot
    #+END_SRC
 
+** Install the program **Poedit** to edit the .pot file:
+
+   #+BEGIN_SRC bash
+   sudo apt install -y poedit
+   #+END_SRC
+
  #+CAPTION: Enjoy
  #+NAME:   fig:Ice Cream
  [[./img/ice-cream.png]]

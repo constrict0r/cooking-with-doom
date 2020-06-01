@@ -27,3 +27,6 @@
              email = johnny@walker.com
      #+END_SRC
 
+ #+CAPTION: Enjoy
+ #+NAME:   fig:Ice Cream
+ [[./img/ice-cream.png]]
