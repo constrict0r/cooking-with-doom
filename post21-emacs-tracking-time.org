@@ -1,0 +1,31 @@
+#+title: [Emacs] Org Clocking Time
+#+author: constrict0r
+#+date: <2020-06-03 mié>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To track time using org mode:
+
+  - Start clock (clock-in):
+
+    #+BEGIN_SRC bash
+    C-c C-x C-i
+    #+END_SRC
+
+  - Stop clock (clock-out):
+
+    #+BEGIN_SRC bash
+    C-c C-x C-o
+    #+END_SRC
+
+  - Reclock:
+
+* Links
+
+- [[https://orgmode.org/manual/Clocking-Work-Time.html][Cloking Time - Org Mode Manual]]
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]

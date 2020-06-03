@@ -1,0 +1,27 @@
+#+title: [Emacs] Org Mode
+#+author: constrict0r
+#+date: <2020-06-03 mié>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To refile a file:
+
+  #+BEGIN_SRC bash
+  C-c C-w
+  #+END_SRC
+
+* To insert a TODO item navigate to a heading and press:
+
+  #+BEGIN_SRC bash
+  M-left
+  #+END_SRC
+
+* Links
+
+- [[https://orgmode.org/manual/TODO-Items.html][TODO - Org Mode Manual]]
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
