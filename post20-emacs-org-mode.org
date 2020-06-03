@@ -15,7 +15,7 @@
 * To insert a TODO item navigate to a heading and press:
 
   #+BEGIN_SRC bash
-  M-left
+  Shift-left
   #+END_SRC
 
 * Links
