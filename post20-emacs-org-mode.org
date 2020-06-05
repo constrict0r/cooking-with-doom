@@ -15,7 +15,13 @@
 * To insert a TODO item navigate to a heading and press:
 
   #+BEGIN_SRC bash
-  Shift-left
+  S-left
+  #+END_SRC
+
+* To show all elements including drawers:
+
+  #+BEGIN_SRC bash
+  C-u C-u C-u TAB
   #+END_SRC
 
 * Links
