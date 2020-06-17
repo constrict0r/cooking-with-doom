@@ -1,0 +1,17 @@
+#+title: [Bash] strace
+#+author: constrict0r
+#+date: <2020-06-17 mié>
+
+#+CAPTION: Doom
+#+NAME:   fig:cooking-with-doom
+[[./img/cooking-with-doom.png]]
+
+* To spy on the process with id 1234:
+
+  #+BEGIN_SRC bash
+  sudo strace -p1234 -s9999 -e write
+  #+END_SRC
+
+#+CAPTION: Enjoy
+#+NAME:   fig:Ice Cream
+[[./img/ice-cream.png]]
