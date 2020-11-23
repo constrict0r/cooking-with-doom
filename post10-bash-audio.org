@@ -38,6 +38,23 @@
     ffmpeg -v 5 -y -i 01\ -\ My\ Song.m4a -acodec libmp3lame -ac 2 -ab 320k 01\ -\ My\ Song.mp3
     #+END_SRC
 
+* To convert from *webm* to *oga* run:
+
+    #+BEGIN_SRC bash
+    ffmpeg -i video.webm -vn -acodec copy audio.oga
+    #+END_SRC
+
+* To convert from *oga* to *mp3* run:
+
+    #+BEGIN_SRC bash
+    ffmpeg -i audio.oga audio.mp3
+    #+END_SRC
+
+* To convert from *mkv* to *mp3* run:
+
+    #+BEGIN_SRC bash
+    ffmpeg -i audio.mkv -vn -c:a libmp3lame -y audio.mp3
+    #+END_SRC
 
 
 #+CAPTION: Enjoy
